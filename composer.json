@@ -1,0 +1,24 @@
+{
+    "name": "taniko/context",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Taniko\\Context\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "vimeo/psalm": "^4.22"
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit tests"
+    }
+}
