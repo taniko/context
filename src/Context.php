@@ -13,22 +13,30 @@ class Context implements ContextInterface
      * @param string $key
      * @return mixed
      */
-    public function value(string $key): mixed
+    public function get(string $key): mixed
     {
         return $this->values[$key] ?? null;
     }
 
     /**
-     * set context value
      * @param string $key
      * @param mixed $value
-     * @return Context
+     * @return ContextInterface
      */
-    public function withValue(string $key, mixed $value): Context
+    public function set(string $key, mixed $value): ContextInterface
     {
         $context = new Context();
         $context->values = $this->values;
         $context->values[$key] = $value;
         return $context;
+    }
+
+    /**
+     * @param string $key
+     * @return bool
+     */
+    public function has(string $key): bool
+    {
+        return isset($this->values[$key]);
     }
 }
